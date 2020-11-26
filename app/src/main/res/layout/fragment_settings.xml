@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SettingsFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Temperature Unit"
+        android:textColor="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Description Language"
+        android:textColor="@color/purple_500"
+        app:layout_constraintStart_toStartOf="@+id/radio_group_temperature_unit"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_temperature_unit" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_temperature_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <RadioButton
+            android:id="@+id/fragment_settings_radio_button_celsius"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/purple_500"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius_unit" />
+
+        <RadioButton
+            android:id="@+id/fragment_settings_radio_button_fahrenheit"
+            android:buttonTint="@color/purple_500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="110dp"
+            android:text="@string/fahrenheit_unit" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radio_group_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/fragment_settings_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/purple_500"
+            android:text="@string/language_english" />
+
+        <RadioButton
+            android:id="@+id/fragment_settings_portuguese"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/purple_500"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:text="@string/language_portuguese" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/fragment_settings_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_language" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

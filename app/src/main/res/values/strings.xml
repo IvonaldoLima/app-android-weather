@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">weather</string>
+    <string name="title_search">Search</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_settings">Settings</string>
+    <string name="celsius_unit">°C</string>
+    <string name="fahrenheit_unit">°F</string>
+    <string name="language_english">English (EN)</string>
+    <string name="language_portuguese">Portuguese (PT)</string>
+</resources>
