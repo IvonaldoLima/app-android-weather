@@ -18,10 +18,10 @@ O projeto foi escrito em Kotlin para a plataforma Android.
 - A aplicação possui as seguintes funcionalidades.
     - **Busca de registros climaticos de cidades**
         - Para adicionar um registro como favorito clicar no botão de coração.
-        <img src="/app/src/main/res/imagensgithub/search.jpg" height="550" width="300">
+        <img src="/app/src/main/res/imagensgithub/search.png" height="550" width="300">
     - **Registros marcados como favoritos**
         - Para remover um registro dos favoritos clicar no botão de coração.
-       <img src="/app/src/main/res/imagensgithub/favorites.jpg" height="550" width="300">
+       <img src="/app/src/main/res/imagensgithub/favorites.png" height="550" width="300">
     - **Configurações**
         - Configurar a aplicação com a unidade de temperatura e a lingua que será utilizado na pesquisa.
-        <img src="/app/src/main/res/imagensgithub/settings.jpg" height="550" width="300">
+        <img src="/app/src/main/res/imagensgithub/settings.png" height="550" width="300">
