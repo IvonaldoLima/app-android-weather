@@ -16,5 +16,5 @@ interface WeatherCityDao {
     fun insertAll(vararg cityDatabase: CityDatabase)
 
     @Delete
-    fun delete(cityDatabase: CityDatabase)
+    fun delete(cityDatabase: CityDatabase): Int
 }
