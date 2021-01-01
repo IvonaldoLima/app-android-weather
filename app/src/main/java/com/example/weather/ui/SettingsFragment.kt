@@ -9,6 +9,8 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.weather.R
+import com.example.weather.data.api.Language
+import com.example.weather.data.api.Units
 import com.example.weather.util.UtilSharedPreferences
 import kotlinx.android.synthetic.main.fragment_settings.*
 
@@ -55,35 +57,34 @@ class SettingsFragment : Fragment() {
     private fun setupSaveButton() {
         fragment_settings_save.setOnClickListener {
             when (radio_group_language.checkedRadioButtonId) {
-                radioButtonEnglish.id -> savePreferenceLanguage(getString(R.string.language_english))
-                radioButtonPortuguese.id -> savePreferenceLanguage(getString(R.string.language_portuguese))
+                radioButtonEnglish.id -> savePreferenceLanguage(Language.EN.toString())
+                radioButtonPortuguese.id -> savePreferenceLanguage(Language.PT.toString())
             }
             when (radio_group_temperature_unit.checkedRadioButtonId) {
-                radioButtonCelsius.id -> savePreferenceTemperatureUnit(getString(R.string.celsius_unit))
-                radioButtonFahrenheit.id -> savePreferenceTemperatureUnit(getString(R.string.fahrenheit_unit))
+                radioButtonCelsius.id -> savePreferenceTemperatureUnit(Units.METRIC.toString())
+                radioButtonFahrenheit.id -> savePreferenceTemperatureUnit(Units.IMPERIAL.toString())
             }
             Toast.makeText(context, "Settings saved", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun loadPreferences() {
-        val prefTemperature =
-            utilSharedPreferences.loadStringValue(Constants.preferenceTemperatureUnit)
-        val prefLanguage = utilSharedPreferences.loadStringValue(Constants.preferenceLanguage)
+        val prefTemperature = utilSharedPreferences.getValue(Constants.preferenceTemperatureUnit)
+        val prefLanguage = utilSharedPreferences.getValue(Constants.preferenceLanguage)
         loadTemperaturePreference(prefTemperature)
         loadLanguagePreference(prefLanguage)
     }
 
-    private fun loadLanguagePreference(languagePreference: String?) {
-        if (radioButtonEnglish.text.toString() == languagePreference)
-            radioButtonEnglish.isChecked = true
-        else radioButtonPortuguese.isChecked = true
-    }
-
     private fun loadTemperaturePreference(temperatureUnitPreference: String?) {
-        if (radioButtonFahrenheit.text == temperatureUnitPreference)
+        if (temperatureUnitPreference == Units.IMPERIAL.toString())
             radioButtonFahrenheit.isChecked = true
         else radioButtonCelsius.isChecked = true
+    }
+
+    private fun loadLanguagePreference(languagePreference: String?) {
+        if (languagePreference == Language.EN.toString())
+            radioButtonEnglish.isChecked = true
+        else radioButtonPortuguese.isChecked = true
     }
 
 }

@@ -1,8 +1,8 @@
-package com.example.weather.model.mapper
+package com.example.weather.data.model.mapper
 
-import com.example.weather.model.CityDatabase
-import com.example.weather.model.WeatherBundle
-import com.example.weather.model.WeatherCity
+import com.example.weather.data.model.CityDatabase
+import com.example.weather.data.model.WeatherBundle
+import com.example.weather.data.model.WeatherCity
 
 class CityDatabaseMapper {
 

@@ -1,6 +1,6 @@
-package com.example.weather.retrofit
+package com.example.weather.data.api.retrofit
 
-import com.example.weather.retrofit.service.WeatherService
+import com.example.weather.data.api.retrofit.service.WeatherApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -15,7 +15,7 @@ class RetrofitManager {
             .build()
     }
 
-    val noticiaService: WeatherService by lazy {
-        retrofit.create(WeatherService::class.java)
+    val noticiaApi: WeatherApi by lazy {
+        retrofit.create(WeatherApi::class.java)
     }
 }

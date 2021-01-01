@@ -18,7 +18,7 @@ class UtilSharedPreferences(context: Context, sharedPreferencesFileName: String)
         }
     }
 
-    fun loadStringValue(key: String, defaultValue: String? = ""): String? = sharedPreferences.getString(key, defaultValue)
+    fun getValue(key: String, defaultValue: String? = ""): String? = sharedPreferences.getString(key, defaultValue)
 
 }
 

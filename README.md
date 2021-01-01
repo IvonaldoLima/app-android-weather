@@ -6,10 +6,12 @@
 O projeto foi escrito em Kotlin para a plataforma Android.
 - **Tecnologias utilizadas**
     - Room
-    - SQlite
+    - SQlite/Room
     - Recyclerview
     - Glide
     - Retrofit
+    - View Binding
+    - Kotlin Coroutines
 ### Aplicação móvel
 - Desenvolvida utilizando Kotlin.
 - Aplicação possui uma tela com três Fragmentes que são respectivamente utilizados para busca, favoritos e configuração.

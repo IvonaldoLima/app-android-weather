@@ -2,6 +2,7 @@ package com.example.weather.ui.adapter
 
 import android.content.Context
 import android.graphics.Rect
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,17 +12,20 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.weather.R
-import com.example.weather.model.CityDatabase
+import com.example.weather.data.api.Units
+import com.example.weather.data.model.CityDatabase
 import kotlinx.android.synthetic.main.item_weather.view.*
+import org.intellij.lang.annotations.Language
 
 
 class WeatherAdapter(
-    private val setCity: MutableList<CityDatabase>,
     private val context: Context?,
     private val onClick: (CityDatabase) -> Unit,
     private val fragment: Fragment
 ) :
     RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
+
+    private val setCity: MutableList<CityDatabase> = mutableListOf()
 
     /**
      * Provide a reference to the type of views that you are using
@@ -74,18 +78,18 @@ class WeatherAdapter(
 
             if (weatherCity.favorite) iconFavorite.setImageResource(R.drawable.ic_action_favorite_selected)
 
-            weatherCity.icon?.let {
-                Glide.with(fragment)
-                    .load("http://openweathermap.org/img/wn/${weatherCity.icon}@2x.png")
-                    .centerCrop()
-                    .error(R.drawable.ic_broke_image)
-                    .into(imgWeather)
-            }
+//            weatherCity.icon?.let {
+//                Glide.with(fragment)
+//                    .load("http://openweathermap.org/img/wn/${weatherCity.icon}@2x.png")
+//                    .centerCrop()
+//                    .error(R.drawable.ic_broke_image)
+//                    .into(imgWeather)
+//            }
         }
 
         private fun checkTemperatureUnit(weatherCity: CityDatabase): String {
-            return if (weatherCity.temperatureUnit == tempUnitCelsius) tempUnitCelsius
-            else if (weatherCity.temperatureUnit == tempUnitFahrenheit) tempUnitFahrenheit
+            return if (weatherCity.temperatureUnit == Units.METRIC.toString()) tempUnitCelsius
+            else if (weatherCity.temperatureUnit == Units.IMPERIAL.toString()) tempUnitFahrenheit
             else tempUnitCelsius
         }
     }

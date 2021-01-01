@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.FavoritesFragment">
 
+    <ProgressBar
+        android:id="@+id/progressBar_favorites"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/weather_list" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_favorites_weather_data_list"
+        android:id="@+id/weather_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
